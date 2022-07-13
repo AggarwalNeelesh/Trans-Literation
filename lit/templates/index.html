@@ -18,8 +18,8 @@
         <div class="dropdown col ml-3">
         <form id='form' method='post' action='#'>
             {% csrf_token %}
-              <select class="btn btn-secondary dropdown-toggle bg-info text-white" name="lang" type="button" id="choice" data-bs-toggle="dropdown" aria-expanded="false">
-                    <option selected="selected" disabled ><b>Select Language:</b></option>
+              <select class="btn btn-secondary dropdown-toggle bg-info text-white" name="lang" type="button" id="choice" data-bs-toggle="dropdown" aria-expanded="false" required>
+                    <option selected="selected" disabled required><b>Select Language:</b></option>
                     <option >Hindi</option>
                     <option >Punjabi</option>
                     <option >Sindhi</option>
@@ -34,8 +34,8 @@
                     <option >Others</option>
               </select>
               <br>
-              <label for="exampleFormControlTextarea1" class='my-3 h2'><b><u>Enter Message Here</u></b></label>
-              <textarea class="form-control" name="msg" id="Textarea1" rows="8" cols="6" required></textarea>
+              <label for="exampleFormControlTextarea1"  class='my-3 h2 container' placeholder="Type Your Message Here"><b><u>Enter Message Here</u></b></label>
+              <textarea class="form-control h2" style="color: MediumSeaGreen ; font-size: 24px;" name="msg" id="Textarea1" rows="8" cols="6" required></textarea>
               
             
             <button type="submit" class='btn btn-secondary my-3 bg-success btn-lg'><b>Convert Text</b></button>
@@ -46,8 +46,8 @@
         <div class='container col mr-3'>
             <button type="submit" aria-expanded="false" class='btn btn-secondary bg-info'><b>English</b></button>
             <br>
-            <label for="exampleFormControlTextarea1" class='my-3 h2'><b><u>Converted English Text</u></b></label>
-            <textarea class="form-control" name="msg2" id="Textarea2" rows="8" cols="6" required></textarea>
+            <label for="exampleFormControlTextarea1" class='my-3 h2 container'><b><u>Converted English Text</u></b></label>
+            <textarea class="form-control h2" style="color: blue; font-size: 24px;" name="msg2" id="Textarea2" rows="8" cols="6" disabled></textarea>
         </div>
         <div class="col-1"></div>
     </div>
