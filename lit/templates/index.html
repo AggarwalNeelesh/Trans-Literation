@@ -8,47 +8,50 @@
   </head>
   {% load static %}
   <body>
-    <nav class="navbar navbar-dark bg-info mb-3">
+    <nav class="navbar navbar-dark bg-primary mb-3 "style="background-image: url('/static/img.png');">
       <span class="mb-0 h1 navbar-text text-white">.</span>
-      <span class="mb-0 h1 navbar-text text-white">Trans Literation Website</span>
+      <span class="mb-0 h1 navbar-text text-white" ><u>Trans Literation Website</u></span>
       <span class="mb-0 h2 navbar-text text-white">.</span>
     </nav>
     <div class='container-fluid row'>
+
         <div class="col-1"></div>
+
         <div class="dropdown col ml-3">
-        <form id='form' method='post' action='#'>
-            {% csrf_token %}
-              <select class="btn btn-secondary dropdown-toggle bg-info text-white" name="lang" type="button" id="choice" data-bs-toggle="dropdown" aria-expanded="false" required>
-                    <option selected="selected" disabled required><b>Select Language:</b></option>
-                    <option >Hindi</option>
-                    <option >Punjabi</option>
-                    <option >Sindhi</option>
-                    <option >Sinhala</option>
-                    <option >Kannada</option>
-                    <option >Somali</option>
-                    <option >Tamil</option>
-                    <option >Telugu</option>
-                    <option >Gujarati</option>
-                    <option >Marathi</option>
-                    <option >Bangla</option>
-                    <option >Others</option>
-              </select>
-              <br>
-              <label for="exampleFormControlTextarea1"  class='my-3 h2 container' placeholder="Type Your Message Here"><b><u>Enter Message Here</u></b></label>
-              <textarea class="form-control h2" style="color: MediumSeaGreen ; font-size: 24px;" name="msg" id="Textarea1" rows="8" cols="6" required></textarea>
-              
-            
-            <button type="submit" class='btn btn-secondary my-3 bg-success btn-lg'><b>Convert Text</b></button>
-        
-        </form>
+            <form id='form' method='post' action='#'>
+                {% csrf_token %}
+                  <select class="btn btn-secondary dropdown-toggle text-white" name="lang" type="button" id="choice" data-bs-toggle="dropdown" aria-expanded="false" style="background-image: url('/static/img.png');" required>
+                        <option selected="selected" required><b>Select Language:</b></option>
+                        <option >Hindi</option>
+                        <option >Punjabi</option>
+                        <option >Sindhi</option>
+                        <option >Sinhala</option>
+                        <option >Kannada</option>
+                        <option >Somali</option>
+                        <option >Tamil</option>
+                        <option >Telugu</option>
+                        <option >Gujarati</option>
+                        <option >Marathi</option>
+                        <option >Bangla</option>
+                        <option >Others</option>
+                  </select>
+                  <br>
+                  <label for="exampleFormControlTextarea1"  class='my-3 h2 container' placeholder="Type Your Message Here"><b><u>Enter Message Here</u></b></label>
+                  <textarea class="form-control h2" style="color: MediumSeaGreen ; font-size: 24px;" name="msg" id="Textarea1" rows="8" cols="6" required></textarea>
+
+
+                <button type="submit" class='btn btn-secondary my-3 bg-success btn-lg'><b>Convert Text</b></button>
+
+            </form>
         </div>
 
         <div class='container col mr-3'>
-            <button type="submit" aria-expanded="false" class='btn btn-secondary bg-info'><b>English</b></button>
+            <button type="submit" aria-expanded="false" class='btn btn-secondary bg-info' style="background-image: url('/static/img.png');"><b>English</b></button>
             <br>
             <label for="exampleFormControlTextarea1" class='my-3 h2 container'><b><u>Converted English Text</u></b></label>
             <textarea class="form-control h2" style="color: blue; font-size: 24px;" name="msg2" id="Textarea2" rows="8" cols="6" disabled></textarea>
         </div>
+
         <div class="col-1"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -57,7 +60,6 @@
   <script >
       $('#form').submit(function(event){
          $('#Textarea2').empty();
-
          var formData ={
             'msg': $('#Textarea1').val(),
             'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
